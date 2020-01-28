@@ -1,5 +1,5 @@
 body {
-    margin: 10px;
+    margin: 1rem;
 }
 
 .container {
@@ -15,14 +15,44 @@ body {
     }
 }
 
+
+// Fading the cars out
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+// Animation for the driving cars
+@keyframes rumble {
+    0% {transform: rotate(0deg);}
+    25% {transform: translate(1px, 0px) rotate(-1deg);}
+    50% {transform: translate(0px, -1px) rotate(0deg);}
+    75% {transform: translate(-1px, 0px) rotate(1deg);}
+    100% {transform: translate(0px, 1px) rotate(0deg);} 
+}
+
+.rumble {
+    animation: rumble .5s infinite linear;
+}
+
 .image {
     height: 40px;
 
     &__big {
         height: 60px;
     }
+
+    &__ghost {
+        animation: 6s ease fade-out forwards, rumble .5s 6 linear;
+        opacity: 1;
+    }
 }
 
-h2 {
+h1, h2 {
     margin-top: 0;
 }

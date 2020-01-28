@@ -22,6 +22,16 @@ function App() {
       <h1>Your electricity savings</h1>
       <div className="container">
         <div className="container--item">
+          <h2>
+            Last month, you saved enough energy to {energySavings}!
+          </h2>
+          <p>
+            Great job! You used 573 kwh last month, compared to
+            791 kwh in the same month last year. The resulting savings
+            is {paragraphSavings}.
+          </p>
+        </div>
+        <div className="container--item">
           <div className="block block__small">
             <div className="image-grid">
               { isChecked ? <Trees /> : <Cars /> }
@@ -29,16 +39,7 @@ function App() {
           </div>
           <Switch isChecked={isChecked} toggleValue={toggleValue} />
         </div>
-        <div className="container--item">
-          <h2>
-            Last month, you saved enough energy to {energySavings}!
-          </h2>
-          <p>
-            Great job! You used 573 kwh last month, compared to 
-            791 kwh in the same month last year. The resulting savings
-            is {paragraphSavings}.
-          </p>
-        </div>
+        
       </div>
     </div>
   );
