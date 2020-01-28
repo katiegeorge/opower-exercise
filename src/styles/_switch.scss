@@ -1,0 +1,74 @@
+.switch {
+    display: inline-block;
+    font-size: 10pt;
+    font-weight: bold;
+    height: 50px;
+    position: relative;
+    width: 170px;
+
+    &--slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-blue;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 5px;
+
+        &:before {
+            background-color: $color-white;
+            border-radius: 5px;
+            bottom: 4px;
+            content: "Cars";
+            height: 22px;
+            left: 4px;
+            padding: 10px;
+            position: absolute;
+            transition: .4s;
+            -webkit-transition: .4s;
+            width: 61px;
+        }
+
+        &:after {
+            Content: "Trees";
+            color: $color-white;
+            padding: 10px;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+    }
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .switch--slider {
+            background-color: $color-green;
+
+            &:before {
+                content: "Trees";
+                -webkit-transform: translateX(81px);
+                -ms-transform: translateX(81px);
+                transform: translateX(81px);
+            }
+
+            &:after {
+                content: "Cars";
+                color: $color-white;
+                padding: 10px;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+            }
+        }
+
+        &:focus + .switch--slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+    }
+}

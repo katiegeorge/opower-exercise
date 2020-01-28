@@ -1,0 +1,28 @@
+body {
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+    &--item {
+        flex: 1;
+
+        & + & {
+            margin-left: 2rem;
+        }
+    }
+}
+
+.image {
+    height: 40px;
+
+    &__big {
+        height: 60px;
+    }
+}
+
+h2 {
+    margin-top: 0;
+}

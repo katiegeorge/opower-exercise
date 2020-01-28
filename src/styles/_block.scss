@@ -3,12 +3,22 @@
     border: 1px solid $color-gray;
     box-shadow: 1px 1px 6px $color-gray-light;
     border-radius: 5px;
-    margin: 10px;
     padding: 10px;
+    margin-bottom: 10px;
 
     &--row {
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    &__small {
+        height: 250px;
+    }
+}
+
+.image-grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
 }
