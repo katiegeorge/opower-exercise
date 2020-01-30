@@ -24,8 +24,8 @@ function App() {
   return (
     <div className="block">
       <h1>Your electricity savings</h1>
-      <div className="container">
-        <div className="container--item">
+      <div className="grid grid-xs-1 grid-md-2">
+        <div>
           <h2>
             Last month, you saved enough energy to {energySavings}!
           </h2>
@@ -34,9 +34,9 @@ function App() {
             {' '}kwh in the same month last year. The resulting savings is {paragraphSavings}.
           </p>
         </div>
-        <div className="container--item">
+        <div>
           <div className="block block__small">
-            <div className="image-grid">
+            <div className="grid grid-xs-3 grid-md-6">
               { isChecked ? <Trees /> : <Cars /> }
             </div>
           </div>

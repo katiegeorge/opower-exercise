@@ -6,19 +6,11 @@
     padding: 1rem;
     margin-bottom: 1rem;
 
-    &--row {
-        display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     &__small {
         height: 250px;
-    }
-}
 
-.image-grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(6, 1fr);
+        @media(max-width: map-get($grid-breakpoints, md)) {
+            height: auto;
+        }
+    }
 }

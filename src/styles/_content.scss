@@ -2,19 +2,6 @@ body {
     margin: 1rem;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-
-    &--item {
-        flex: 1;
-
-        & + & {
-            margin-left: 2rem;
-        }
-    }
-}
-
 
 // Fading the cars out
 @keyframes fade-out {

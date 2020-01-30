@@ -1,0 +1,36 @@
+$grid-breakpoints: (
+  // iPhone SE
+  xxs: 0,
+  // Extra small screen / phone
+  xs: 321px,
+  // Small screen / phone
+  sm: 544px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+@mixin grid-layout() {
+    $cols: 12;
+
+    @each $bp in map-keys($grid-breakpoints) {
+        @for $col from 1 through $cols {
+            &-#{$bp}-#{$col} {
+                display: grid;
+                grid-gap: 1rem;
+                justify-content: space-between;
+
+                @media(min-width: map-get($grid-breakpoints, $bp)) {
+                    grid-template-columns: repeat($col, 1fr);
+                }
+            }
+        }
+    }
+}
+
+.grid {
+    @include grid-layout();
+}
