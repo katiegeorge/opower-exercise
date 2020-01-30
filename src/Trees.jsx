@@ -4,7 +4,9 @@ import Tree from './assets/tree.svg';
 
 function Trees() { 
     const treesSaved = 12; 
-    const trees = [...Array(treesSaved)].map((e, i) => <img src={Tree} className="image image__big" />);
+    const trees = [...Array(treesSaved)].map(
+        (e, i) => <img alt="trees saved" src={Tree} className="image image__big image__reverse-ghost" />
+    );
   
     return trees;
 }

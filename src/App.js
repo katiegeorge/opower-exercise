@@ -4,6 +4,8 @@ import './styles/main.scss';
 import Cars from './Cars';
 import Trees from './Trees';
 import Switch from './Switch';
+import data from './data.json';
+
 
 function App() {
   const [isChecked, setIsChecked] = useState('trees');
@@ -17,6 +19,8 @@ function App() {
     'equivalent to the energy given off by twelve pines trees' :
     'enough to offset the energy consumption of six average-size cars for one month';
 
+  const { currentYear, priorYear } = data.energyUse;
+
   return (
     <div className="block">
       <h1>Your electricity savings</h1>
@@ -26,9 +30,8 @@ function App() {
             Last month, you saved enough energy to {energySavings}!
           </h2>
           <p>
-            Great job! You used 573 kwh last month, compared to
-            791 kwh in the same month last year. The resulting savings
-            is {paragraphSavings}.
+            Great job! You used {currentYear} kwh last month, compared to {priorYear}
+            {' '}kwh in the same month last year. The resulting savings is {paragraphSavings}.
           </p>
         </div>
         <div className="container--item">
