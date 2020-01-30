@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { render } from 'react-dom';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 import './styles/main.scss';
 
 import Cars from './Cars';
@@ -21,6 +24,33 @@ function App() {
 
   const { currentYear, priorYear } = data.energyUse;
 
+  const options = {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Energy savings'
+    },
+    xAxis: {
+      categories: [
+        'Last year',
+        'This year',
+      ],
+      crosshair: true
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Energy used (kwh)'
+      }
+    },
+    series: [
+      {
+        data: [791, 573]
+      }
+    ]
+  };
+
   return (
     <div className="block">
       <h1>Your electricity savings</h1>
@@ -33,6 +63,7 @@ function App() {
             Great job! You used {currentYear} kwh last month, compared to {priorYear}
             {' '}kwh in the same month last year. The resulting savings is {paragraphSavings}.
           </p>
+          <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
         <div>
           <div className="block block__small">

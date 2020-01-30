@@ -2,6 +2,10 @@ body {
     margin: 1rem;
 }
 
+h1, h2 {
+    margin-top: 0;
+}
+
 
 // Fading the cars out
 @keyframes fade-out {
@@ -66,8 +70,4 @@ body {
         animation: 6s ease fade-in forwards, 6s ease grow forwards;
         opacity: 0.2;
     }
-}
-
-h1, h2 {
-    margin-top: 0;
 }
