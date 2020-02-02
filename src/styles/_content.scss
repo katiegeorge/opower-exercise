@@ -7,6 +7,15 @@ body {
     }
 }
 
+.chart {
+    width: 67%;
+    margin: 0 auto;
+
+    @media(max-width: map-get($grid-breakpoints, sm)) {
+        width: 100%;
+    }
+}
+
 h1, h2 {
     margin-top: 0;
 }

@@ -34,7 +34,9 @@ function App() {
             Great job! You used {currentYear} kwh last month, compared to {priorYear}
             {' '}kwh in the same month last year. The resulting savings is {paragraphSavings}.
           </p>
+          <div className="chart">
           <Chart priorYear={priorYear} currentYear={currentYear} />
+          </div>
         </div>
         <div>
           <div className="block block__small">

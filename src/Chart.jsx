@@ -8,7 +8,7 @@ function Chart({priorYear, currentYear}) {
     const options = {
         chart: {
             type: 'column',
-            height: '200px'
+            height: '200px',
         },
         title: null,
         plotOptions: {
