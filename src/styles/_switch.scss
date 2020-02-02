@@ -1,3 +1,12 @@
+@mixin switch-content($type, $direction) {
+    content: $type;
+    color: $color-white;
+    padding: 12px;
+    position: absolute;
+    #{$direction}: 4px;
+    top: 4px;
+}
+
 .switch {
     display: inline-block;
     font-size: 10pt;
@@ -23,9 +32,9 @@
             border-radius: 5px;
             bottom: 4px;
             content: "Cars";
-            height: 22px;
+            height: 18px;
             left: 4px;
-            padding: 10px;
+            padding: 12px;
             position: absolute;
             transition: .4s;
             -webkit-transition: .4s;
@@ -33,12 +42,7 @@
         }
 
         &:after {
-            Content: "Trees";
-            color: $color-white;
-            padding: 10px;
-            position: absolute;
-            right: 4px;
-            top: 4px;
+            @include switch-content("Trees", right);
         }
     }
 
@@ -52,23 +56,18 @@
 
             &:before {
                 content: "Trees";
-                -webkit-transform: translateX(81px);
-                -ms-transform: translateX(81px);
-                transform: translateX(81px);
+                -webkit-transform: translateX(77px);
+                -ms-transform: translateX(77px);
+                transform: translateX(77px);
             }
 
             &:after {
-                content: "Cars";
-                color: $color-white;
-                padding: 10px;
-                position: absolute;
-                top: 4px;
-                left: 4px;
+                @include switch-content("Cars", left);
             }
         }
 
         &:focus + .switch--slider {
-            box-shadow: 0 0 1px #2196F3;
+            box-shadow: 0 0 1px $color-blue;
         }
     }
 }

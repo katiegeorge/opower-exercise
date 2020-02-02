@@ -9,6 +9,9 @@ function Chart({priorYear, currentYear}) {
         chart: {
             type: 'column',
             height: '200px',
+            style: {
+                fontFamily: 'Signika'
+            }
         },
         title: null,
         plotOptions: {
@@ -43,7 +46,7 @@ function Chart({priorYear, currentYear}) {
         series: [
             {
                 data: [priorYear, currentYear],
-                color: '#25ba86',
+                color: '#cfcfcf',
             }
         ]
     };
