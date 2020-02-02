@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { render } from 'react-dom';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
 import './styles/main.scss';
 
 import Cars from './Cars';
 import Trees from './Trees';
 import Switch from './Switch';
+import Chart from './Chart';
 import data from './data.json';
 
 
@@ -24,37 +22,10 @@ function App() {
 
   const { currentYear, priorYear } = data.energyUse;
 
-  const options = {
-    chart: {
-      type: 'column'
-    },
-    title: {
-      text: 'Energy savings'
-    },
-    xAxis: {
-      categories: [
-        'Last year',
-        'This year',
-      ],
-      crosshair: true
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: 'Energy used (kwh)'
-      }
-    },
-    series: [
-      {
-        data: [791, 573]
-      }
-    ]
-  };
-
   return (
     <div className="block">
       <h1>Your electricity savings</h1>
-      <div className="grid grid-xs-1 grid-md-2">
+      <div className="grid grid-md-1 grid-lg-2">
         <div>
           <h2>
             Last month, you saved enough energy to {energySavings}!
@@ -63,17 +34,16 @@ function App() {
             Great job! You used {currentYear} kwh last month, compared to {priorYear}
             {' '}kwh in the same month last year. The resulting savings is {paragraphSavings}.
           </p>
-          <HighchartsReact highcharts={Highcharts} options={options} />
+          <Chart priorYear={priorYear} currentYear={currentYear} />
         </div>
         <div>
           <div className="block block__small">
-            <div className="grid grid-xs-3 grid-md-6">
+            <div className="grid grid-xs-3 grid-md-4">
               { isChecked ? <Trees /> : <Cars /> }
             </div>
           </div>
           <Switch isChecked={isChecked} toggleValue={toggleValue} />
         </div>
-        
       </div>
     </div>
   );

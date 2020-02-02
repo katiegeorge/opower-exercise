@@ -5,12 +5,4 @@
     border-radius: 5px;
     padding: 1rem;
     margin-bottom: 1rem;
-
-    &__small {
-        height: 250px;
-
-        @media(max-width: map-get($grid-breakpoints, md)) {
-            height: auto;
-        }
-    }
 }
